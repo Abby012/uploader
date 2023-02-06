@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import React, { Component } from 'react';
+import axios from 'axios';
 
 class App extends Component {
   state = {
@@ -20,9 +21,10 @@ onFileUpload = () => {
     this.state.selectedFile.name
   )
   //call api
-  console.log(formData);
-  this.setState({selectedFile: null});
-  this.setState({fileUploadedSuccessfully: true});
+  axios.post("https://am56ebwthb.execute-api.ca-central-1.amazonaws.com/prod/file-upload", formData).then(() => {
+    this.setState({selectedFile: null});
+    this.setState({fileUploadedSuccessfully: true});
+  })
 }
 
 fileData = () => {
