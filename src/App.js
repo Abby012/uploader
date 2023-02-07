@@ -21,7 +21,7 @@ onFileUpload = () => {
     this.state.selectedFile.name
   )
   //call api
-  axios.post("https://am56ebwthb.execute-api.ca-central-1.amazonaws.com/prod/file-upload", formData).then(() => {
+  axios.post("https://r5aoyfxi8l.execute-api.ca-central-1.amazonaws.com/prod/file-upload", formData).then(() => {
     this.setState({selectedFile: null});
     this.setState({fileUploadedSuccessfully: true});
   })
