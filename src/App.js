@@ -44,14 +44,14 @@ fileData = () => {
     return (
       <div>
         <br />
-        <h4>Your file has been successfully uploaded</h4>
+        <h4>Fichier Téléchargé</h4>
       </div>
     );
   } else {
     return (
       <div>
         <br />
-        <h4>Choose a file and then press the Upload button</h4>
+        <h4>Choisissez un fichier et appuyez le button Télécharger</h4>
       </div>
     )
   }
@@ -60,12 +60,12 @@ fileData = () => {
   render() {
     return (
       <div className="container">
-        <h2>Abby File Upload System</h2>
-        <h3>File Upload with React and a Serverless API!</h3>
+        <h1 class='title'>Traducteur ASL</h1>
+        <h3>American Sign Language</h3>
         <div>
           <input type='file' onChange={this.onFileChange} />
           <button onClick={this.onFileUpload}>
-            Upload
+            Télécharger
           </button>
         </div>
         {this.fileData()}
