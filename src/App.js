@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import './index.css'
 import React, { Component } from 'react';
 import axios from 'axios';
 
@@ -49,11 +50,11 @@ fileData = () => {
   // console.log(this.state.selectedFile)
   if (this.state.selectedFile) {
     return (
-      <div>
-        <h2>File Details:</h2>
-        <p>File Name: {this.state.selectedFile.name}</p>
-        <p>File Type: {this.state.selectedFile.type}</p>
-        <p>Last Modified: {" "}
+      <div className='show'>
+        <h2>Détails du Fichier:</h2>
+        <p>Nom du Fichier: {this.state.selectedFile.name}</p>
+        <p>Type de Fichier: {this.state.selectedFile.type}</p>
+        <p>Dernière Modification: {" "}
           {this.state.selectedFile.lastModifiedDate.toDateString()}
         </p>
       </div>
@@ -68,7 +69,6 @@ fileData = () => {
   } else {
     return (
       <div>
-        <br />
         <h4>Choisissez un fichier et appuyez le button Télécharger</h4>
       </div>
     )
@@ -77,10 +77,10 @@ fileData = () => {
 
 prediction = () => {
   return (
-    <div>
-      <h2>Prediction:</h2>
-      <p>Letter: {this.state.letter}</p>
-      <p>Confidence {this.state.confidence}</p>
+    <div className='prediction'>
+      <h2>Prédiction:</h2>
+      <p>Lettre: {this.state.letter}</p>
+      <p>Confiance {this.state.confidence}</p>
     </div>
   )
 
@@ -98,7 +98,6 @@ prediction = () => {
           </button>
         </div>
         {this.fileData()}
-        <br />
         {this.prediction()}
       </div>
     )
